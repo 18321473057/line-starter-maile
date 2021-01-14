@@ -22,4 +22,12 @@
  
  注意: 该项目做为springboot项目在本地运行时,加载的是本地的application.yml配置;
        作为jar包组件时, 由其他项目加载自动配置时, 使用的是其他项目的application.yml配置
+       
+       
+       
+ 注意:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ 异常:::java.lang.IllegalStateException: Unable to read meta-data for XXXXXXXXXXXXXX.class 
+        可能是使用springboot 的打包插件 , 在pom.xml中删除这个插件就好了.
+ 注意:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ 
   
