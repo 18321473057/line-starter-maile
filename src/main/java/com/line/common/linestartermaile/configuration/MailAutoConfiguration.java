@@ -1,6 +1,8 @@
 package com.line.common.linestartermaile.configuration;
 
 import com.line.common.linestartermaile.properties.MailProperties;
+import com.line.common.linestartermaile.service.IMailSendProvider;
+import com.line.common.linestartermaile.service.impl.MailSendProvider;
 import com.line.common.linestartermaile.service.impl.MailSendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -9,6 +11,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 /**
  * @Author: yangcs
@@ -26,9 +29,21 @@ public class MailAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(MailSendService.class)
+    @DependsOn("mailSendProvider")
     public MailSendService mailSendService(){
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MailSendService  INIT ");
-        return new MailSendService(mailProperties);
+        MailSendService mailSendService = new MailSendService();
+        mailSendService.setMailSendProvider(mailSendProvider());
+        return mailSendService;
     }
+
+    @Bean
+    public IMailSendProvider mailSendProvider(){
+        MailSendProvider mailSendService = new MailSendProvider();
+        mailSendService.setMailProperties(mailProperties);
+        return mailSendService;
+    }
+
+
 
 }

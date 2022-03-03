@@ -1,4 +1,20 @@
 line:
   mail:
-    mailNo: 377704204
-    nickName: ycs
+    senderEmail: 377704204@qq.com
+    #授权码
+    senderCode: kjjjbnuwriqbbhhh
+    #服务器地址
+    emailSMTPHost: smtp.qq.com
+    #收件人邮箱
+    receiveMailAccount: 2429238050@qq.com
+#    #抄送
+#    ccMailAccount: xxxxx@163.com
+#    #密送人邮箱
+#    bccmailAccount: xxxxxx@qq.com
+#  使用的协议
+    transportProtocol: smtp
+#  需要请求认证
+    smtpAuth: true
+    fileCovtPath: C:\laojiangCovt
+
+
