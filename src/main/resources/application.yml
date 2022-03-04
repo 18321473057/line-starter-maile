@@ -7,14 +7,13 @@ line:
     emailSMTPHost: smtp.qq.com
     #收件人邮箱
     receiveMailAccount: 2429238050@qq.com
-#    #抄送
-#    ccMailAccount: xxxxx@163.com
-#    #密送人邮箱
-#    bccmailAccount: xxxxxx@qq.com
-#  使用的协议
+    #    #抄送
+    #    ccMailAccount: xxxxx@163.com
+    #    #密送人邮箱
+    #    bccmailAccount: xxxxxx@qq.com
+    #  使用的协议
     transportProtocol: smtp
-#  需要请求认证
+    #  需要请求认证
     smtpAuth: true
-    fileCovtPath: C:\laojiangCovt
-
-
+    #    邮件工作空间
+    mailWorkSpace: C:\com\line\mail\ws

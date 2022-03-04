@@ -20,7 +20,7 @@ public class LineStarterMailApplication {
         mailContent.setTitle("你好我是标题");
         mailContent.setContent("我这个内容在附件中!");
 //        bean.send(mailContent);
-        bean.send(mailContent,mp.getFileCovtPath()+"\\1\\累计三包2.docx",true);
+        bean.send(mailContent,"C:\\Users\\Lenovo\\Desktop\\老蒋数据文件夹",true);
     }
 
 }

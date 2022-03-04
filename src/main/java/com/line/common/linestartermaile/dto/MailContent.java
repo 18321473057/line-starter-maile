@@ -18,8 +18,6 @@ public class MailContent {
     private String  title;
     //内容
     private String  content;
-    //类型
-    private String  miniType;
 
     public String getSenderEmail() {
         return senderEmail;
@@ -69,11 +67,4 @@ public class MailContent {
         this.content = content;
     }
 
-    public String getMiniType() {
-        return miniType;
-    }
-
-    public void setMiniType(String miniType) {
-        this.miniType = miniType;
-    }
 }

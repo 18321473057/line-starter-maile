@@ -24,16 +24,18 @@ public class CompressDirUtil {
 	* @return void    返回类型 
 	* @throws
 	 */
-	public static boolean compressFileToZip(String compresspath) {
+	public static boolean compressFileToZip(String compresspath,String toPath) {
 		boolean bool = false;
 		try {
 			ZipOutputStream zipOutput = null;
         	File file = new File(compresspath);
         	if(file.isDirectory()){
-        		zipOutput = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(compresspath + ".zip")));
+        		zipOutput = new ZipOutputStream(new BufferedOutputStream(
+        				new FileOutputStream(toPath+ ".zip")));
         		compressZip(zipOutput, file, ""); //递归压缩文件夹，最后一个参数传""压缩包就不会有当前文件夹；传file.getName(),则有当前文件夹;
         	}else{
-        		zipOutput = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(compresspath.substring(0, compresspath.lastIndexOf(".")) + ".zip")));
+        		zipOutput = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(
+						toPath+ ".zip")));
         		zipOFile(zipOutput, file); //压缩单个文件
         	}
             zipOutput.closeEntry();
@@ -123,5 +125,12 @@ public class CompressDirUtil {
  			e.printStackTrace();
  		}
      }
+
+
+	public static void main(String[] args) {
+		String a = "C:\\com\\line\\mail";
+
+		System.out.println(a.substring(a.lastIndexOf('\\')));
+	}
 	
 }

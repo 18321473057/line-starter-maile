@@ -33,6 +33,7 @@ public class MailAutoConfiguration {
     public MailSendService mailSendService(){
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MailSendService  INIT ");
         MailSendService mailSendService = new MailSendService();
+        mailSendService.setMailProperties(mailProperties);
         mailSendService.setMailSendProvider(mailSendProvider());
         return mailSendService;
     }
@@ -41,6 +42,8 @@ public class MailAutoConfiguration {
     public IMailSendProvider mailSendProvider(){
         MailSendProvider mailSendService = new MailSendProvider();
         mailSendService.setMailProperties(mailProperties);
+        System.out.println("mailProperties 配置信息 如下");
+        System.out.println(mailProperties);
         return mailSendService;
     }
 

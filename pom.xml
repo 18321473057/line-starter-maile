@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.line.common</groupId>
 	<artifactId>line-starter-maile</artifactId>
-	<version>1.0.0.RELEASE</version>
+	<version>1.0.4.RELEASE</version>
 	<name>line-starter-mail</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -24,11 +24,6 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>javax.mail</groupId>

@@ -25,8 +25,11 @@ public class MailProperties {
     private String transportProtocol;
     //  需要请求认证
     private String smtpAuth;
+    //邮件工作空间
+    private String mailWorkSpace;
 
-    private String fileCovtPath;
+
+
 
     public String getSenderEmail() {
         return senderEmail;
@@ -93,11 +96,26 @@ public class MailProperties {
         this.smtpAuth = smtpAuth;
     }
 
-    public String getFileCovtPath() {
-        return fileCovtPath;
+    public String getMailWorkSpace() {
+        return mailWorkSpace;
     }
 
-    public void setFileCovtPath(String fileCovtPath) {
-        this.fileCovtPath = fileCovtPath;
+    public void setMailWorkSpace(String mailWorkSpace) {
+        this.mailWorkSpace = mailWorkSpace;
+    }
+
+    @Override
+    public String toString() {
+        return "MailProperties{" +
+                "senderEmail='" + senderEmail + '\'' +
+                ", senderCode='" + senderCode + '\'' +
+                ", emailSMTPHost='" + emailSMTPHost + '\'' +
+                ", receiveMailAccount='" + receiveMailAccount + '\'' +
+                ", ccMailAccount='" + ccMailAccount + '\'' +
+                ", bccmailAccount='" + bccmailAccount + '\'' +
+                ", transportProtocol='" + transportProtocol + '\'' +
+                ", smtpAuth='" + smtpAuth + '\'' +
+                ", mailWorkSpace='" + mailWorkSpace + '\'' +
+                '}';
     }
 }
